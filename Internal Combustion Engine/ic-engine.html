@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0c1015">
+  <title>IC Engine Mechanism & Assembly | Engineering Case Study</title>
+
+  <style>
+    :root {
+      --bg: #0c1015;
+      --surface: #131a22;
+      --surface2: #18222c;
+      --line: #293642;
+      --text: #f2f5f8;
+      --muted: #9aa8b6;
+      --orange: #ff923f;
+      --orange-light: #ffb16f;
+      --max: 950px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .topline {
+      height: 3px;
+      background: linear-gradient(90deg, var(--orange), transparent 75%);
+    }
+
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
+      background: rgba(12, 16, 21, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+    }
+
+    .back-btn {
+      color: var(--orange);
+      font-size: 13px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s ease;
+    }
+
+    .back-btn:hover {
+      color: var(--orange-light);
+    }
+
+    .project-header {
+      padding: 50px 0 35px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .tag {
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 11px;
+      font-weight: 800;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 46px);
+      letter-spacing: -1.2px;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 800px;
+    }
+
+    .media-section {
+      padding: 40px 0;
+    }
+
+    .section-title {
+      font-size: 22px;
+      margin-bottom: 22px;
+      letter-spacing: -0.5px;
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-bottom: 35px;
+    }
+
+    .spec-item {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 18px 20px;
+      border-radius: 6px;
+      font-size: 13.5px;
+    }
+
+    .spec-item strong {
+      display: block;
+      color: var(--orange);
+      margin-bottom: 6px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .media-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 35px;
+    }
+
+    .media-card img,
+    .media-card video {
+      width: 100%;
+      display: block;
+      background: #000;
+      max-height: 650px;
+      object-fit: contain;
+    }
+
+    .media-caption {
+      padding: 18px 22px;
+      border-top: 1px solid var(--line);
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .media-caption strong {
+      color: var(--text);
+    }
+
+    .nda-card {
+      background: var(--surface2);
+      border: 1px dashed var(--line);
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .nda-card h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+      color: var(--orange);
+    }
+
+    .nda-card p {
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 30px 0;
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topline"></div>
+
+  <header>
+    <div class="container">
+      <a href="../index.html" class="back-btn">← Back to Portfolio</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="project-header">
+      <span class="tag">Machine Design / Mechanism Kinematics</span>
+      <h1>IC Engine Mechanism & Assembly</h1>
+      <p class="lead">
+        Comprehensive parametric 3D CAD modeling and mechanical analysis of an internal combustion engine cylinder subsystem. Explores reciprocating component design, clearances, bearing splits, and dynamic balancing.
+      </p>
+    </div>
+
+    <section class="media-section">
+      <h2 class="section-title">Technical Specifications</h2>
+      
+      <div class="specs-grid">
+        <div class="spec-item">
+          <strong>CAD Platform</strong>
+          SolidWorks (Parametric Assemblies & Drawings)
+        </div>
+        <div class="spec-item">
+          <strong>Key Subsystems</strong>
+          Piston crown & skirt, compression rings, connecting rod, wrist pin, split journal cap, and counterweighted crankshaft.
+        </div>
+        <div class="spec-item">
+          <strong>Engineering Focus</strong>
+          Assembly mates, mechanical interference verification, running fits, and DFM for casting/CNC operations.
+        </div>
+      </div>
+
+      <h2 class="section-title">Visual Documentation & Simulation</h2>
+
+      <!-- Item 1: Blueprint -->
+      <div class="media-card">
+        <img src="Internal%20Combustion%20Engine%20Blueprint.png" alt="Internal Combustion Engine Blueprint">
+        <div class="media-caption">
+          <strong>Figure 1: Full Technical Assembly Blueprint</strong> — Multiview engineering layout detailing orthographic elevations, longitudinal cylinder sections displaying piston top dead center (TDC) / bottom dead center (BDC), and exploded assembly structure.
+        </div>
+      </div>
+
+      <!-- Item 2: Motion Simulation Video -->
+      <div class="media-card">
+        <!-- If you have an MP4 file in this folder, adjust the file name below -->
+        <video controls poster="Internal%20Combustion%20Engine%20Blueprint.png">
+          <source src="IC%20engine.mp4" type="video/mp4">
+          Your browser does not support HTML5 video playback.
+        </video>
+        <div class="media-caption">
+          <strong>Video 1: Motion Study & Kinematic Verification</strong> — Dynamic simulation showing crankshaft rotation converted to pure reciprocating linear piston travel via connecting rod angular oscillation.
+        </div>
+      </div>
+
+      <!-- Confidentiality notice block -->
+      <div class="nda-card">
+        <h3>🔒 Proprietary CAD & Manufacturing Deliverables</h3>
+        <p>
+          Complete parametric SolidWorks assembly trees (`.SLDASM`), detailed 2D manufacturing prints with GD&T (`.PDF`), and universal interchange models (`.STEP`) are preserved securely and available upon request.
+        </p>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© Design Engineer Portfolio • All technical documentation protected.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
