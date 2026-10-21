@@ -1,537 +1,247 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0c1015">
-  <meta name="description" content="Design engineer specializing in custom machine design, SolidWorks, robotics, reverse engineering, prototyping and fabrication.">
-  <title>Engineering Studio | Design Engineer</title>
+  <title>Design Engineer | Portfolio</title>
 
   <style>
     :root {
       --bg: #0c1015;
       --surface: #131a22;
-      --surface2: #19232d;
+      --surface-elevated: #18222c;
       --line: #293642;
       --text: #f2f5f8;
       --muted: #9aa8b6;
       --orange: #ff923f;
       --orange-light: #ffb16f;
-      --max: 1160px;
+      --max: 1100px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
-
+    html { scroll-behavior: smooth; }
     body {
-      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
     }
 
     a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-    button, a { -webkit-tap-highlight-color: transparent; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
 
-    .container {
-      width: min(var(--max), calc(100% - 48px));
-      margin-inline: auto;
-    }
+    /* Top Accent Line */
+    .topline { height: 3px; background: linear-gradient(90deg, var(--orange), transparent 75%); }
 
-    .grid-bg {
-      background-image:
-        linear-gradient(rgba(137,159,179,.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(137,159,179,.045) 1px, transparent 1px);
-      background-size: 36px 36px;
-    }
-
-    .topline {
-      height: 3px;
-      background: linear-gradient(90deg, var(--orange), transparent 70%);
-    }
-
+    /* Navigation */
     header {
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(12,16,21,.94);
-      backdrop-filter: blur(16px);
+      background: rgba(12, 16, 21, 0.95);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--line);
     }
-
     nav {
-      min-height: 76px;
+      min-height: 64px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 28px;
     }
-
     .brand {
-      display: flex;
-      align-items: center;
-      gap: 11px;
       font-size: 14px;
       font-weight: 800;
-      letter-spacing: 1.5px;
-      white-space: nowrap;
-    }
-
-    .brand-mark {
-      width: 35px;
-      height: 35px;
-      display: grid;
-      place-items: center;
-      border: 1px solid var(--orange);
-      color: var(--orange);
-      font-size: 17px;
-      border-radius: 5px;
-    }
-
-    .nav-links {
+      letter-spacing: 1.2px;
       display: flex;
-      align-items: center;
-      gap: 27px;
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .nav-links a:hover { color: var(--orange); }
-
-    .nav-links .nav-contact {
-      padding: 9px 14px;
-      border: 1px solid var(--orange);
-      border-radius: 4px;
-      color: var(--orange);
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 100px 0 90px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 450px;
-      height: 450px;
-      right: -150px;
-      top: 20px;
-      border: 1px solid rgba(255,146,63,.13);
-      border-radius: 50%;
-      box-shadow:
-        0 0 0 55px rgba(255,146,63,.025),
-        0 0 0 110px rgba(255,146,63,.02);
-      pointer-events: none;
-    }
-
-    .hero-content { position: relative; z-index: 1; }
-
-    .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 11px;
-      color: var(--orange);
-      text-transform: uppercase;
-      letter-spacing: 2.5px;
-      font-size: 11px;
-      font-weight: 800;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 25px;
-      height: 2px;
-      background: var(--orange);
-    }
-
-    h1 {
-      max-width: 880px;
-      font-size: clamp(44px, 7.3vw, 86px);
-      line-height: 1.04;
-      letter-spacing: -3.5px;
-      margin: 25px 0;
-      font-weight: 800;
-    }
-
-    h1 span { color: var(--orange); }
-
-    .hero-copy {
-      max-width: 650px;
-      font-size: 17px;
-      color: var(--muted);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 13px;
-      margin-top: 32px;
-    }
-
-    .btn {
-      display: inline-flex;
-      justify-content: center;
       align-items: center;
       gap: 10px;
-      min-height: 47px;
-      padding: 11px 19px;
-      border: 1px solid var(--line);
-      border-radius: 4px;
-      font-size: 13px;
-      font-weight: 750;
-      transition: .2s ease;
     }
+    .brand span { color: var(--orange); }
+    .nav-links { display: flex; gap: 20px; font-size: 13px; color: var(--muted); }
+    .nav-links a:hover { color: var(--orange); }
 
-    .btn:hover { transform: translateY(-2px); }
-
-    .btn-primary {
-      background: var(--orange);
-      color: #17130f;
-      border-color: var(--orange);
+    /* Hero */
+    .hero {
+      padding: 90px 0 70px;
+      border-bottom: 1px solid var(--line);
+      background-image: 
+        radial-gradient(circle at 80% 20%, rgba(255, 146, 63, 0.08) 0%, transparent 40%),
+        linear-gradient(rgba(137,159,179,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(137,159,179,0.03) 1px, transparent 1px);
+      background-size: 100% 100%, 32px 32px, 32px 32px;
     }
-
-    .btn-primary:hover { background: var(--orange-light); }
-
-    .hero-meta {
+    .tag {
+      display: inline-block;
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    h1 {
+      font-size: clamp(38px, 6vw, 64px);
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+    }
+    h1 span { color: var(--orange); }
+    .hero p {
+      max-width: 620px;
+      font-size: 17px;
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+    .hero-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 24px;
-      margin-top: 45px;
-      padding-top: 20px;
-      border-top: 1px solid var(--line);
+      gap: 12px;
+    }
+    .hero-tags span {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 12px;
       color: var(--muted);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
     }
 
-    .hero-meta span::before {
-      content: "↗";
-      color: var(--orange);
-      margin-right: 8px;
+    /* Section Styles */
+    section { padding: 75px 0; }
+    .section-title {
+      font-size: 28px;
+      letter-spacing: -0.8px;
+      margin-bottom: 8px;
     }
-
-    section { padding: 85px 0; }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 30px;
+    .section-sub {
+      color: var(--muted);
+      font-size: 14px;
       margin-bottom: 35px;
     }
 
-    .section-title {
-      margin-top: 12px;
-      font-size: clamp(31px, 4vw, 46px);
-      line-height: 1.15;
-      letter-spacing: -1.5px;
-    }
-
-    .section-description {
-      max-width: 490px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .project-list {
+    /* Projects Grid */
+    .projects-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 27px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
     }
-
-    .project {
+    .card {
       background: var(--surface);
       border: 1px solid var(--line);
-      border-radius: 7px;
-      overflow: hidden;
-      transition: border-color .2s, transform .2s;
+      border-radius: 8px;
+      padding: 24px;
+      transition: transform 0.2s, border-color 0.2s;
     }
-
-    .project:hover {
-      border-color: rgba(255,146,63,.7);
+    .card:hover {
       transform: translateY(-3px);
+      border-color: rgba(255, 146, 63, 0.6);
     }
-
-    .project-image {
-      position: relative;
-      aspect-ratio: 16 / 10;
-      overflow: hidden;
-      display: grid;
-      place-items: center;
-      background:
-        linear-gradient(140deg, rgba(255,146,63,.12), transparent 55%),
-        repeating-linear-gradient(0deg, transparent, transparent 29px, rgba(150,170,190,.05) 30px),
-        repeating-linear-gradient(90deg, transparent, transparent 29px, rgba(150,170,190,.05) 30px),
-        #1a2530;
-      border-bottom: 1px solid var(--line);
-    }
-
-    /* Replace each placeholder with your own project image. */
-    .project-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      inset: 0;
-    }
-
-    .image-placeholder {
-      padding: 25px;
-      text-align: center;
-      color: var(--muted);
-      z-index: 1;
-    }
-
-    .image-placeholder .symbol {
-      display: block;
-      color: var(--orange);
-      font-size: 46px;
-      line-height: 1.4;
-      margin-bottom: 10px;
-    }
-
-    .image-placeholder strong {
-      display: block;
-      color: var(--text);
-      font-size: 12px;
-      letter-spacing: 1.4px;
-    }
-
-    .image-placeholder small {
-      display: block;
-      font-size: 11px;
-      margin-top: 5px;
-    }
-
-    .project-body { padding: 25px; }
-
-    .project-topline {
+    .card-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 10px;
+      margin-bottom: 16px;
     }
-
-    .project-category {
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 6px;
+      background: var(--surface-elevated);
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
       color: var(--orange);
-      text-transform: uppercase;
-      letter-spacing: 1.4px;
-      font-size: 10px;
-      font-weight: 800;
+      font-size: 18px;
     }
-
-    .project-number {
-      color: #657484;
-      font-size: 11px;
-      font-family: monospace;
+    .card-num { font-size: 11px; font-family: monospace; color: #627282; }
+    .card h3 { font-size: 20px; margin-bottom: 10px; }
+    .card p { font-size: 13.5px; color: var(--muted); line-height: 1.6; margin-bottom: 20px; }
+    
+    .spec-block {
+      background: var(--surface-elevated);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 12px 14px;
+      margin-bottom: 18px;
+      font-size: 12px;
     }
-
-    .project h3 {
-      font-size: 22px;
-      line-height: 1.3;
-      margin-bottom: 10px;
-    }
-
-    .project-body > p {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .project-details {
+    .spec-block div { margin-bottom: 4px; }
+    .spec-block div:last-child { margin-bottom: 0; }
+    .spec-block strong { color: var(--text); }
+    
+    .pill-group {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 17px;
+      gap: 6px;
     }
-
-    .project-details span {
+    .pill-group span {
+      background: var(--bg);
       border: 1px solid var(--line);
-      color: #c0cad3;
+      padding: 3px 8px;
       border-radius: 3px;
-      padding: 4px 8px;
-      font-size: 10px;
+      font-size: 11px;
+      color: #b5c2ce;
     }
 
-    .project-link {
-      display: inline-block;
-      margin-top: 19px;
-      color: var(--orange);
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .project-link:hover { color: var(--orange-light); }
-
-    .about {
-      background: #10161d;
+    /* Skills Area */
+    .skills-section {
+      background: #0f141a;
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
     }
-
-    .about-grid {
+    .skills-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 70px;
-      align-items: start;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
     }
-
-    .about-copy h2 {
-      margin: 14px 0 22px;
-      font-size: clamp(33px, 4vw, 48px);
-      line-height: 1.15;
-      letter-spacing: -1.5px;
-    }
-
-    .about-copy h2 span { color: var(--orange); }
-
-    .about-copy p {
-      margin-top: 14px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .skill-panel {
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      padding: 27px;
+    .skill-box {
       background: var(--surface);
-    }
-
-    .skill-panel h3 {
-      font-size: 17px;
-      margin-bottom: 20px;
-    }
-
-    .skill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-    }
-
-    .skill {
-      border: 1px solid #354351;
-      border-radius: 3px;
-      padding: 8px 11px;
-      color: #cbd4dc;
-      font-size: 12px;
-      background: #18212b;
-    }
-
-    .workflow {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
       border: 1px solid var(--line);
+      padding: 20px;
       border-radius: 6px;
-      overflow: hidden;
-      margin-top: 32px;
     }
-
-    .workflow-step {
-      padding: 22px;
-      border-right: 1px solid var(--line);
-      background: var(--surface);
-    }
-
-    .workflow-step:last-child { border-right: 0; }
-
-    .workflow-step .number {
+    .skill-box h4 {
       color: var(--orange);
-      font: 12px monospace;
-    }
-
-    .workflow-step h3 {
-      font-size: 15px;
-      margin: 11px 0 6px;
-    }
-
-    .workflow-step p {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .contact-box {
-      padding: 55px;
-      background:
-        linear-gradient(115deg, rgba(255,146,63,.09), transparent 65%),
-        var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 7px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 35px;
-    }
-
-    .contact-box h2 {
-      margin: 14px 0;
-      font-size: clamp(30px, 4vw, 44px);
-      line-height: 1.15;
-      letter-spacing: -1.5px;
-    }
-
-    .contact-box p {
-      color: var(--muted);
       font-size: 14px;
-      max-width: 570px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
     }
+    .skill-box ul { list-style: none; font-size: 13px; color: var(--muted); }
+    .skill-box li { margin-bottom: 8px; }
+    .skill-box li::before { content: "• "; color: var(--orange); }
+
+    /* Contact */
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 40px;
+      border-radius: 8px;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .contact-card h2 { font-size: 26px; margin-bottom: 12px; }
+    .contact-card p { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
+    .btn {
+      display: inline-block;
+      background: var(--orange);
+      color: #111;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 4px;
+      font-size: 13px;
+      transition: background 0.2s;
+    }
+    .btn:hover { background: var(--orange-light); }
 
     footer {
       border-top: 1px solid var(--line);
-      padding: 25px 0;
+      padding: 24px 0;
+      text-align: center;
+      font-size: 12px;
       color: var(--muted);
-      font-size: 11px;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    footer span { color: var(--orange); }
-
-    @media (max-width: 780px) {
-      .container { width: min(100% - 32px, var(--max)); }
-      nav { min-height: 68px; gap: 12px; }
-      .brand { font-size: 12px; letter-spacing: .7px; }
-      .brand-mark { width: 31px; height: 31px; }
-      .nav-links { gap: 13px; font-size: 11px; }
-      .nav-links .nav-contact { padding: 6px 9px; }
-      .hero { padding: 75px 0 60px; }
-      h1 { letter-spacing: -2px; }
-      .section-head { align-items: start; flex-direction: column; }
-      .about-grid { grid-template-columns: 1fr; gap: 32px; }
-      .workflow { grid-template-columns: 1fr 1fr; }
-      .workflow-step:nth-child(2) { border-right: 0; }
-      .workflow-step:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
-      .contact-box { padding: 30px; align-items: start; flex-direction: column; }
-    }
-
-    @media (max-width: 540px) {
-      .nav-links { gap: 10px; }
-      .nav-links a:nth-child(3) { display: none; }
-      .project-list { grid-template-columns: 1fr; }
-      .hero-meta { gap: 12px 18px; }
-      section { padding: 62px 0; }
-      .workflow-step { padding: 16px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after {
-        transition-duration: .01ms !important;
-        animation-duration: .01ms !important;
-      }
     }
   </style>
 </head>
@@ -541,204 +251,116 @@
 
   <header>
     <nav class="container">
-      <a class="brand" href="#home" aria-label="Engineering Studio home">
-        <span class="brand-mark">E/</span>
-        ENGINEERING STUDIO
-      </a>
-
+      <div class="brand">
+        <span>⚙</span> DESIGN ENGINEER PORTFOLIO
+      </div>
       <div class="nav-links">
         <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a class="nav-contact" href="#contact">Contact ↗</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#contact">Contact</a>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="hero grid-bg" id="home">
-      <div class="container hero-content">
-        <div class="eyebrow">Mechanical Design / Robotics / Prototyping</div>
-
-        <h1>Engineering ideas.<br>Building <span>real solutions.</span></h1>
-
-        <p class="hero-copy">
-          I'm a design engineer working across custom machine design,
-          SolidWorks, robotics, reverse engineering and product development.
-          My focus is turning engineering concepts into practical,
-          manufacturable and testable solutions.
+    <section class="hero">
+      <div class="container">
+        <span class="tag">Mechanical & Machine Design</span>
+        <h1>From Concept Modeling<br>to <span>Manufacturable Reality.</span></h1>
+        <p>
+          I design automated machinery, precision mechanisms, and custom prototypes. Focused on reliable CAD modeling, structural rigidity, and Design for Manufacturing (DFM).
         </p>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#projects">Explore Selected Work ↘</a>
-          <a class="btn" href="#contact">Discuss a Project ↗</a>
-        </div>
-
-        <div class="hero-meta">
+        <div class="hero-tags">
           <span>SolidWorks CAD</span>
-          <span>Physical Prototyping</span>
-          <span>Freelance Engineering</span>
+          <span>Kinematic Analysis</span>
+          <span>Sheet Metal & Weldments</span>
+          <span>Rapid Prototyping</span>
+          <span>GD&T (ASME Y14.5)</span>
         </div>
       </div>
     </section>
 
+    <!-- Project Showcase -->
     <section id="projects">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">Portfolio / Selected Work</div>
-            <h2 class="section-title">Engineering Projects</h2>
-          </div>
-          <p class="section-description">
-            A selection of design and build projects. Each case study
-            can explain the challenge, my contribution, the engineering
-            process and the final outcome.
-          </p>
-        </div>
+        <h2 class="section-title">Selected Engineering Work</h2>
+        <p class="section-sub">Overview of mechanism design, reverse engineering, and custom machine builds.</p>
 
-        <div class="project-list">
-
-          <!-- PROJECT 01: Replace the placeholder with your machine image. -->
-          <article class="project">
-            <div class="project-image">
-              <div class="image-placeholder">
-                <span class="symbol">⚙</span>
-                <strong>MACHINE DESIGN</strong>
-                <small>Add a SolidWorks render or machine photograph</small>
-              </div>
+        <div class="projects-grid">
+          
+          <!-- Card 1 -->
+          <article class="card">
+            <div class="card-top">
+              <div class="card-icon">⚙</div>
+              <span class="card-num">PROJECT / 01</span>
             </div>
-            <div class="project-body">
-              <div class="project-topline">
-                <span class="project-category">Mechanical Engineering</span>
-                <span class="project-number">PROJECT / 01</span>
-              </div>
-              <h3>Custom Machine Design</h3>
-              <p>
-                Describe the machine, its purpose, the mechanism you
-                designed, and how the design addresses the original
-                engineering problem.
-              </p>
-              <div class="project-details">
-                <span>SolidWorks</span>
-                <span>3D Assembly</span>
-                <span>Manufacturing</span>
-              </div>
-              <a class="project-link" href="#contact">Enquire about similar work ↗</a>
+            <h3>Custom Automation Mechanism</h3>
+            <p>Designed a multi-station pick-and-place assembly with pneumatic slide integration and high-speed linear guide positioning.</p>
+            <div class="spec-block">
+              <div><strong>Core Tools:</strong> SolidWorks, Motion Analysis</div>
+              <div><strong>Key Achievement:</strong> Reduced cycle time by 22% via weight-reduced linkage geometry.</div>
+            </div>
+            <div class="pill-group">
+              <span>Mechanism Design</span>
+              <span>Pneumatics</span>
+              <span>Assembly</span>
             </div>
           </article>
 
-          <!-- PROJECT 02: Replace the placeholder with your robotics image. -->
-          <article class="project">
-            <div class="project-image">
-              <div class="image-placeholder">
-                <span class="symbol">⌘</span>
-                <strong>ROBOTICS & AUTOMATION</strong>
-                <small>Add a photograph of your completed robot</small>
-              </div>
+          <!-- Card 2 -->
+          <article class="card">
+            <div class="card-top">
+              <div class="card-icon">⌘</div>
+              <span class="card-num">PROJECT / 02</span>
             </div>
-            <div class="project-body">
-              <div class="project-topline">
-                <span class="project-category">Robotics</span>
-                <span class="project-number">PROJECT / 02</span>
-              </div>
-              <h3>Robotics & Automation Build</h3>
-              <p>
-                Explain the open-source project or concept, the hardware
-                you assembled or modified, and how you tested the
-                physical system.
-              </p>
-              <div class="project-details">
-                <span>Mechanical Integration</span>
-                <span>Assembly</span>
-                <span>Testing</span>
-              </div>
-              <a class="project-link" href="#contact">Enquire about similar work ↗</a>
+            <h3>Robotics Chassis & Arm Linkages</h3>
+            <p>Engineered structural brackets, motor gear reductions, and precision arm joints for a compact multi-axis manipulator.</p>
+            <div class="spec-block">
+              <div><strong>Core Tools:</strong> 3D CAD, Rapid 3D Printing</div>
+              <div><strong>Key Achievement:</strong> Sized high-torque planetary drives for steady payload stabilization.</div>
+            </div>
+            <div class="pill-group">
+              <span>Robotics</span>
+              <span>Actuator Sizing</span>
+              <span>Prototyping</span>
             </div>
           </article>
 
-          <!-- PROJECT 03: Replace the placeholder with your CAD image. -->
-          <article class="project">
-            <div class="project-image">
-              <div class="image-placeholder">
-                <span class="symbol">⌗</span>
-                <strong>REVERSE ENGINEERING</strong>
-                <small>Add a reconstructed part or technical drawing</small>
-              </div>
+          <!-- Card 3 -->
+          <article class="card">
+            <div class="card-top">
+              <div class="card-icon">⌗</div>
+              <span class="card-num">PROJECT / 03</span>
             </div>
-            <div class="project-body">
-              <div class="project-topline">
-                <span class="project-category">CAD Reconstruction</span>
-                <span class="project-number">PROJECT / 03</span>
-              </div>
-              <h3>Reverse Engineering & CAD</h3>
-              <p>
-                Show how an existing component was measured, reconstructed
-                in CAD, and prepared for design review, fabrication or
-                further product development.
-              </p>
-              <div class="project-details">
-                <span>SolidWorks</span>
-                <span>Part Modeling</span>
-                <span>Technical Drawings</span>
-              </div>
-              <a class="project-link" href="#contact">Enquire about similar work ↗</a>
+            <h3>Reverse Engineering & CAD Remaster</h3>
+            <p>Digitized legacy cast components using physical measurement techniques, reconstructing parametric models with draft angles.</p>
+            <div class="spec-block">
+              <div><strong>Core Tools:</strong> Parametric Modeling, GD&T</div>
+              <div><strong>Key Achievement:</strong> Generated complete shop drawings ready for CNC production.</div>
+            </div>
+            <div class="pill-group">
+              <span>Reverse Engineering</span>
+              <span>Drafting</span>
+              <span>Tolerancing</span>
             </div>
           </article>
 
-          <!-- PROJECT 04: Replace the placeholder with your prototype image. -->
-          <article class="project">
-            <div class="project-image">
-              <div class="image-placeholder">
-                <span class="symbol">▧</span>
-                <strong>PRODUCT & PROTOTYPING</strong>
-                <small>Add a prototype or fabricated component photo</small>
-              </div>
+          <!-- Card 4 -->
+          <article class="card">
+            <div class="card-top">
+              <div class="card-icon">▧</div>
+              <span class="card-num">PROJECT / 04</span>
             </div>
-            <div class="project-body">
-              <div class="project-topline">
-                <span class="project-category">Product Development</span>
-                <span class="project-number">PROJECT / 04</span>
-              </div>
-              <h3>Product Design & Prototyping</h3>
-              <p>
-                Document the path from concept to prototype, including
-                design iterations, material or manufacturing choices,
-                and what was learned during testing.
-              </p>
-              <div class="project-details">
-                <span>Product Design</span>
-                <span>Prototyping</span>
-                <span>Fabrication</span>
-              </div>
-              <a class="project-link" href="#contact">Enquire about similar work ↗</a>
+            <h3>Sheet Metal Enclosure & Packaging</h3>
+            <p>Designed an IP-rated modular electronics enclosure optimized for punch-press and press-brake fabrication.</p>
+            <div class="spec-block">
+              <div><strong>Core Tools:</strong> Sheet Metal Tools, Thermal Layout</div>
+              <div><strong>Key Achievement:</strong> Minimized weld joints using continuous self-locating bent flanges.</div>
             </div>
-          </article>
-
-          <!-- PROJECT 05: Replace with a screenshot of one of your websites. -->
-          <article class="project">
-            <div class="project-image">
-              <div class="image-placeholder">
-                <span class="symbol">▤</span>
-                <strong>DIGITAL PROJECT</strong>
-                <small>Add a screenshot of your website</small>
-              </div>
-            </div>
-            <div class="project-body">
-              <div class="project-topline">
-                <span class="project-category">Digital Development</span>
-                <span class="project-number">PROJECT / 05</span>
-              </div>
-              <h3>AI-Assisted Website Development</h3>
-              <p>
-                Introduce one of your websites, its purpose, the tools
-                used to build it, and the features you implemented.
-              </p>
-              <div class="project-details">
-                <span>Web Design</span>
-                <span>AI Tools</span>
-                <span>Deployment</span>
-              </div>
-              <a class="project-link" href="#contact">Discuss a digital project ↗</a>
+            <div class="pill-group">
+              <span>Sheet Metal</span>
+              <span>DFM</span>
+              <span>Fabrication</span>
             </div>
           </article>
 
@@ -746,107 +368,60 @@
       </div>
     </section>
 
-    <section class="about" id="about">
-      <div class="container about-grid">
-        <div class="about-copy">
-          <div class="eyebrow">About / Engineering Approach</div>
-          <h2>From the CAD screen <span>to the real world.</span></h2>
-          <p>
-            I enjoy solving mechanical problems through design,
-            experimentation and hands-on building. My work spans
-            custom machinery, robotics, reverse engineering and
-            product prototyping.
-          </p>
-          <p>
-            I aim to create designs that are not only visually clear
-            in CAD, but also practical to assemble, manufacture and
-            evaluate in the real world.
-          </p>
-          <p>
-            This portfolio presents selected work and documents my
-            contribution to each project. Project-specific details
-            will be added as the case studies are completed.
-          </p>
-        </div>
-
-        <div class="skill-panel" id="skills">
-          <div class="eyebrow">Tools / Capabilities</div>
-          <h3>Technical Toolkit</h3>
-          <div class="skill-list">
-            <span class="skill">SolidWorks</span>
-            <span class="skill">3D CAD Modeling</span>
-            <span class="skill">Mechanical Assemblies</span>
-            <span class="skill">Machine Design</span>
-            <span class="skill">Reverse Engineering</span>
-            <span class="skill">Robotics</span>
-            <span class="skill">Prototyping</span>
-            <span class="skill">Fabrication</span>
-            <span class="skill">Manufacturing Drawings</span>
-            <span class="skill">Product Development</span>
-            <span class="skill">AI-Assisted Web Development</span>
-          </div>
-        </div>
-      </div>
-
+    <!-- Skills / Capabilities -->
+    <section class="skills-section" id="capabilities">
       <div class="container">
-        <div class="workflow">
-          <div class="workflow-step">
-            <span class="number">STEP / 01</span>
-            <h3>Understand</h3>
-            <p>Define the need, constraints and intended outcome.</p>
+        <h2 class="section-title">Technical Capabilities</h2>
+        <p class="section-sub">Areas of engineering execution and technical toolsets.</p>
+
+        <div class="skills-grid">
+          <div class="skill-box">
+            <h4>CAD & Modeling</h4>
+            <ul>
+              <li>SolidWorks Modeling</li>
+              <li>Complex 3D Assemblies</li>
+              <li>Surface Modeling</li>
+              <li>Sheet Metal Design</li>
+            </ul>
           </div>
-          <div class="workflow-step">
-            <span class="number">STEP / 02</span>
-            <h3>Design</h3>
-            <p>Develop concepts, CAD models and design details.</p>
+          <div class="skill-box">
+            <h4>Engineering Rigor</h4>
+            <ul>
+              <li>DFM (Design for Manufacturing)</li>
+              <li>DFA (Design for Assembly)</li>
+              <li>GD&T Tolerancing</li>
+              <li>Motor & Actuator Sizing</li>
+            </ul>
           </div>
-          <div class="workflow-step">
-            <span class="number">STEP / 03</span>
-            <h3>Build</h3>
-            <p>Prepare components for fabrication and assembly.</p>
-          </div>
-          <div class="workflow-step">
-            <span class="number">STEP / 04</span>
-            <h3>Evaluate</h3>
-            <p>Test, document findings and improve the design.</p>
+          <div class="skill-box">
+            <h4>Fabrication & Build</h4>
+            <ul>
+              <li>FDM/SLA 3D Printing</li>
+              <li>CNC Machining Layouts</li>
+              <li>Physical Assembly & Fit-up</li>
+              <li>Hardware Sourcing</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Simple Contact Block -->
     <section id="contact">
       <div class="container">
-        <div class="contact-box">
-          <div>
-            <div class="eyebrow">Contact / Freelance Projects</div>
-            <h2>Have a machine or product<br>you want to develop?</h2>
-            <p>
-              Get in touch to discuss custom machine design, SolidWorks
-              modeling, reverse engineering, robotics integration or
-              prototype development.
-            </p>
-          </div>
-
-          <!-- IMPORTANT: Replace this placeholder with your actual email. -->
-          <a class="btn btn-primary"
-             href="mailto:YOUR_EMAIL@example.com?subject=Engineering%20Project%20Enquiry">
-            Discuss a Project ↗
-          </a>
+        <div class="contact-card">
+          <h2>Ready to Collaborate?</h2>
+          <p>Whether you need custom machine components, CAD conversion, or physical prototyping design, let's talk.</p>
+          <a class="btn" href="mailto:your-email@example.com?subject=Design%20Engineering%20Inquiry">Send an Email ↗</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Engineering Studio</p>
-      <p>Designed for engineering work. <span>Built with purpose.</span></p>
+    <div class="container">
+      <p>© Design Engineer Portfolio • Built with GitHub Pages</p>
     </div>
   </footer>
-
-  <script>
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-  </script>
 </body>
 </html>
