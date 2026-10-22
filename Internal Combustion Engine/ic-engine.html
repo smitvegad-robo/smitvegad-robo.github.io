@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0c1015">
-  <title>IC Engine Mechanism & Assembly | Engineering Case Study</title>
+  <title>IC Engine Mechanism & Assembly | Smit Vegad</title>
 
   <style>
     :root {
@@ -16,11 +16,10 @@
       --muted: #9aa8b6;
       --orange: #ff923f;
       --orange-light: #ffb16f;
-      --max: 950px;
+      --max: 960px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -32,11 +31,7 @@
     }
 
     a { color: inherit; text-decoration: none; }
-
-    .container {
-      width: min(var(--max), calc(100% - 40px));
-      margin-inline: auto;
-    }
+    .container { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
 
     .topline {
       height: 3px;
@@ -44,7 +39,7 @@
     }
 
     header {
-      padding: 20px 0;
+      padding: 18px 0;
       border-bottom: 1px solid var(--line);
       background: rgba(12, 16, 21, 0.95);
       position: sticky;
@@ -62,10 +57,7 @@
       gap: 8px;
       transition: color 0.2s ease;
     }
-
-    .back-btn:hover {
-      color: var(--orange-light);
-    }
+    .back-btn:hover { color: var(--orange-light); }
 
     .project-header {
       padding: 50px 0 35px;
@@ -83,39 +75,37 @@
     }
 
     h1 {
-      font-size: clamp(32px, 5vw, 46px);
+      font-size: clamp(30px, 4.8vw, 44px);
       letter-spacing: -1.2px;
       line-height: 1.15;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .lead {
       color: var(--muted);
       font-size: 16px;
-      max-width: 800px;
+      max-width: 820px;
     }
 
-    .media-section {
-      padding: 40px 0;
-    }
-
+    .media-section { padding: 40px 0; }
     .section-title {
       font-size: 22px;
       margin-bottom: 22px;
       letter-spacing: -0.5px;
     }
 
+    /* Technical Specs Overview */
     .specs-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-      margin-bottom: 35px;
+      gap: 16px;
+      margin-bottom: 40px;
     }
 
     .spec-item {
       background: var(--surface);
       border: 1px solid var(--line);
-      padding: 18px 20px;
+      padding: 16px 20px;
       border-radius: 6px;
       font-size: 13.5px;
     }
@@ -123,46 +113,69 @@
     .spec-item strong {
       display: block;
       color: var(--orange);
-      margin-bottom: 6px;
+      margin-bottom: 5px;
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
 
+    /* Media Cards */
     .media-card {
       background: var(--surface);
       border: 1px solid var(--line);
       border-radius: 8px;
       overflow: hidden;
-      margin-bottom: 35px;
+      margin-bottom: 36px;
     }
 
     .media-card img,
     .media-card video {
       width: 100%;
       display: block;
-      background: #000;
-      max-height: 650px;
+      background: #080c10;
+      max-height: 680px;
       object-fit: contain;
     }
 
     .media-caption {
-      padding: 18px 22px;
+      padding: 20px 24px;
       border-top: 1px solid var(--line);
       font-size: 13.5px;
       color: var(--muted);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
-    .media-caption strong {
+    .media-caption h3 {
+      font-size: 16px;
       color: var(--text);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
+    .media-caption h3 span {
+      color: var(--orange);
+      font-size: 12px;
+      font-family: monospace;
+      letter-spacing: 1px;
+    }
+
+    .media-caption ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    .media-caption li {
+      margin-bottom: 4px;
+    }
+
+    /* Confidentiality block */
     .nda-card {
       background: var(--surface2);
       border: 1px dashed var(--line);
       border-radius: 8px;
-      padding: 24px;
+      padding: 26px;
       text-align: center;
       margin-bottom: 40px;
     }
@@ -176,13 +189,13 @@
     .nda-card p {
       font-size: 13px;
       color: var(--muted);
-      max-width: 600px;
+      max-width: 620px;
       margin: 0 auto;
     }
 
     footer {
       border-top: 1px solid var(--line);
-      padding: 30px 0;
+      padding: 26px 0;
       text-align: center;
       font-size: 12px;
       color: var(--muted);
@@ -201,58 +214,101 @@
 
   <main class="container">
     <div class="project-header">
-      <span class="tag">Machine Design / Mechanism Kinematics</span>
-      <h1>IC Engine Mechanism & Assembly</h1>
+      <span class="tag">Machine Design & 3D Modeling</span>
+      <h1>IC Engine Mechanism & Subsystem Assembly</h1>
       <p class="lead">
-        Comprehensive parametric 3D CAD modeling and mechanical analysis of an internal combustion engine cylinder subsystem. Explores reciprocating component design, clearances, bearing splits, and dynamic balancing.
+        Comprehensive parametric CAD design, kinematic mechanism assembly, and multi-view technical drafting of a 4-stroke internal combustion engine subsystem developed in SolidWorks.
       </p>
     </div>
 
     <section class="media-section">
-      <h2 class="section-title">Technical Specifications</h2>
+      <h2 class="section-title">Design & Simulation Overview</h2>
       
       <div class="specs-grid">
         <div class="spec-item">
           <strong>CAD Platform</strong>
-          SolidWorks (Parametric Assemblies & Drawings)
+          SolidWorks (Parametric Parts, Subassemblies & Drafting)
         </div>
         <div class="spec-item">
-          <strong>Key Subsystems</strong>
-          Piston crown & skirt, compression rings, connecting rod, wrist pin, split journal cap, and counterweighted crankshaft.
+          <strong>Subsystems Designed</strong>
+          Cylinder block, piston assembly, connecting rod, and counterbalanced crankshaft.
         </div>
         <div class="spec-item">
           <strong>Engineering Focus</strong>
-          Assembly mates, mechanical interference verification, running fits, and DFM for casting/CNC operations.
+          Geometric dimensioning, running clearances, split-bearing fits, and DFM.
         </div>
       </div>
 
-      <h2 class="section-title">Visual Documentation & Simulation</h2>
+      <h2 class="section-title">Technical Drawings & Kinematic Media</h2>
 
-      <!-- Item 1: Blueprint -->
-      <div class="media-card">
-        <img src="Internal%20Combustion%20Engine%20Blueprint.png" alt="Internal Combustion Engine Blueprint">
+      <!-- 1. ENTIRE ENGINE BLUEPRINT -->
+      <article class="media-card">
+        <img src="Internal%20Combustion%20Engine%20Blueprint.png" alt="Entire Internal Combustion Engine Blueprint">
         <div class="media-caption">
-          <strong>Figure 1: Full Technical Assembly Blueprint</strong> — Multiview engineering layout detailing orthographic elevations, longitudinal cylinder sections displaying piston top dead center (TDC) / bottom dead center (BDC), and exploded assembly structure.
+          <h3><span>DRAWING / 01</span> Full Subassembly Layout & Sectional Projections</h3>
+          <p>
+            Complete multi-view technical drawing displaying front elevation, side profile, and top view projections of the assembled cylinder block. Features a full longitudinal section view displaying internal clearances, cylinder wall wall-thickness ratios, and valve/manifold packaging geometry.
+          </p>
+          <ul>
+            <li><strong>Key Feature:</strong> Dimensioned overall envelope ensuring accurate engine mount alignment and chassis clearance.</li>
+            <li><strong>Clearances:</strong> Verified mechanical interference margins between cylinder bore and valve guides.</li>
+          </ul>
         </div>
-      </div>
+      </article>
 
-      <!-- Item 2: Motion Simulation Video -->
-      <div class="media-card">
-        <!-- If you have an MP4 file in this folder, adjust the file name below -->
+      <!-- 2. PISTON & CRANKSHAFT BLUEPRINT -->
+      <article class="media-card">
+        <!-- Replace 'piston-crankshaft-blueprint.png' with your actual file name if different -->
+        <img src="Piston and Crankshaft Blueprint.png" alt="Piston and Crankshaft Detail Blueprint">
+        <div class="media-caption">
+          <h3><span>DRAWING / 02</span> Piston Assembly & Crankshaft Geometry</h3>
+          <p>
+            Detailed engineering drawing focusing on critical reciprocating and rotating components: the piston crown, compression ring grooves, wrist pin bore, connecting rod with split bearing cap, and counterweighted crankshaft.
+          </p>
+          <ul>
+            <li><strong>Piston Crown & Ring Pack:</strong> Toleranced ring-groove clearances engineered to accommodate thermal expansion under combustion cycles.</li>
+            <li><strong>Split Journal Bearing:</strong> Connecting rod bottom cap designed with split-bearing alignment surfaces and high-tensile fastener spacing.</li>
+            <li><strong>Crankshaft Web:</strong> Counterweight profiles modeled to offset primary reciprocating inertia forces.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 3. EXPLODED VIEW & PARTS LIST -->
+      <article class="media-card">
+        <!-- Replace 'exploded-view-bom.png' with your actual file name if different -->
+        <img src="Inline Four-Stroke Engine Exploded View.png" alt="Exploded Assembly View and Bill of Materials">
+        <div class="media-caption">
+          <h3><span>DRAWING / 03</span> Exploded View & Bill of Materials (BOM)</h3>
+          <p>
+            Isometric exploded view mapping the complete bottom-to-top assembly sequence. Each discrete component is indexed with callout balloons matched directly to the structured parts list.
+          </p>
+          <ul>
+            <li><strong>Disassembly / Assembly Flow:</strong> Visual confirmation of fastener accessibility and tool clearance during maintenance.</li>
+            <li><strong>Structured BOM:</strong> Item numbers, component nomenclature, quantities, and material classifications for seamless manufacturing handoff.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 4. SOLIDWORKS ASSEMBLY VIDEO -->
+      <article class="media-card">
+        <!-- Replace 'IC engine.mp4' with your video file name if different -->
         <video controls poster="Internal%20Combustion%20Engine%20Blueprint.png">
           <source src="IC%20engine.mp4" type="video/mp4">
           Your browser does not support HTML5 video playback.
         </video>
         <div class="media-caption">
-          <strong>Video 1: Motion Study & Kinematic Verification</strong> — Dynamic simulation showing crankshaft rotation converted to pure reciprocating linear piston travel via connecting rod angular oscillation.
+          <h3><span>SIMULATION / 04</span> Kinematic Motion Study & Assembly Verification</h3>
+          <p>
+            Dynamic SolidWorks motion simulation verifying slider-crank kinematics. Validates continuous 360° crankshaft rotation, smooth angular oscillation of the connecting rod, and linear reciprocating translation of the piston within the cylinder bore without mechanical bind or interference.
+          </p>
         </div>
-      </div>
+      </article>
 
-      <!-- Confidentiality notice block -->
+      <!-- Security / NDA note -->
       <div class="nda-card">
-        <h3>🔒 Proprietary CAD & Manufacturing Deliverables</h3>
+        <h3>🔒 Manufacturing Data & Native Models</h3>
         <p>
-          Complete parametric SolidWorks assembly trees (`.SLDASM`), detailed 2D manufacturing prints with GD&T (`.PDF`), and universal interchange models (`.STEP`) are preserved securely and available upon request.
+          Native SolidWorks part trees (`.SLDPRT`), master assembly files (`.SLDASM`), and universal `.STEP` models with complete tolerance schemes are securely archived and available upon direct request.
         </p>
       </div>
 
@@ -261,7 +317,7 @@
 
   <footer>
     <div class="container">
-      <p>© Design Engineer Portfolio • All technical documentation protected.</p>
+      <p>© Smit Vegad • Mechatronics & Design Engineer • Built with GitHub Pages</p>
     </div>
   </footer>
 
