@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0c1015">
   <title>Smit Vegad | Mechatronics & Design Engineer</title>
-
   <style>
     :root {
       --bg: #0c1015;
@@ -18,23 +17,17 @@
       --orange-light: #ffb16f;
       --max: 1100px;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
     }
-
     a { color: inherit; text-decoration: none; }
-    .container { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
-
-    /* Top Accent Line */
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
     .topline { height: 3px; background: linear-gradient(90deg, var(--orange), transparent 75%); }
-
-    /* Navigation */
     header {
       position: sticky;
       top: 0;
@@ -51,4 +44,331 @@
     }
     .brand {
       font-size: 14px;
-      font-weight: 8
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand span { color: var(--orange); }
+    .nav-links { display: flex; gap: 20px; font-size: 13px; color: var(--muted); }
+    .nav-links a:hover { color: var(--orange); }
+    .hero {
+      padding: 80px 0 60px;
+      border-bottom: 1px solid var(--line);
+      background-color: var(--bg);
+    }
+    .tag {
+      display: inline-block;
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    h1 {
+      font-size: clamp(34px, 5.5vw, 60px);
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+    }
+    h1 span { color: var(--orange); }
+    .hero p {
+      max-width: 650px;
+      font-size: 16px;
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .hero-tags span {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    section { padding: 60px 0; }
+    .section-title { font-size: 26px; margin-bottom: 8px; }
+    .section-sub { color: var(--muted); font-size: 14px; margin-bottom: 30px; }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 24px;
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .card-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+      background: var(--surface-elevated);
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      color: var(--orange);
+      font-size: 16px;
+    }
+    .card-num { font-size: 11px; font-family: monospace; color: #627282; }
+    .card h3 { font-size: 19px; margin-bottom: 10px; }
+    .card p { font-size: 13.5px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
+    .pill-group { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill-group span {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      padding: 3px 8px;
+      border-radius: 3px;
+      font-size: 11px;
+      color: #b5c2ce;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--orange);
+      color: #111;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+    .btn:hover { background: var(--orange-light); }
+    .skills-section {
+      background: #0f141a;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .skill-box {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 20px;
+      border-radius: 6px;
+    }
+    .skill-box h4 {
+      color: var(--orange);
+      font-size: 13px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    .skill-box ul { list-style: none; font-size: 13px; color: var(--muted); }
+    .skill-box li { margin-bottom: 8px; }
+    .skill-box li::before { content: "• "; color: var(--orange); }
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 40px;
+      border-radius: 8px;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .contact-card h2 { font-size: 24px; margin-bottom: 10px; }
+    .contact-card p { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 20px 0;
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+
+  <header>
+    <nav class="container">
+      <div class="brand">
+        <span>⚙</span> SMIT VEGAD
+      </div>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="tag">Mechatronics & Design Engineer</span>
+        <h1>From Concept Modeling<br>to <span>Manufacturable Reality.</span></h1>
+        <p>
+          I am a Mechatronics Engineer specializing in 3D CAD modeling, sheet metal, and weldments. I integrate functional design with 3D printing for rapid prototyping—turning engineering concepts into reliable, testable hardware.
+        </p>
+        <div class="hero-tags">
+          <span>SolidWorks CAD</span>
+          <span>Rapid Prototyping (3D Printing)</span>
+          <span>Sheet Metal & Weldments</span>
+          <span>Kinematic Analysis</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Selected Engineering Work</h2>
+        <p class="section-sub">Overview of mechanism design, reverse engineering, and custom machine builds.</p>
+
+        <div class="projects-grid">
+          
+          <!-- Card 1 -->
+          <article class="card">
+            <div style="margin: -24px -24px 20px -24px; border-radius: 8px 8px 0 0; overflow: hidden; border-bottom: 1px solid var(--line); max-height: 240px;">
+              <a href="Internal%20Combustion%20Engine/ic-engine.html">
+                <img src="Internal%20Combustion%20Engine/Internal%20Combustion%20Engine%20Blueprint.png" alt="IC Engine Blueprint" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+              </a>
+            </div>
+
+            <div class="card-top">
+              <div class="card-icon">⚙</div>
+              <span class="card-num">PROJECT / 01</span>
+            </div>
+            
+            <h3>
+              <a href="Internal%20Combustion%20Engine/ic-engine.html">
+                IC Engine Mechanism & Assembly →
+              </a>
+            </h3>
+            
+            <p>
+              Parametric 3D CAD modeling and kinematic assembly of a 4-stroke internal combustion engine cylinder subsystem.
+            </p>
+
+            <div class="pill-group">
+              <span>SolidWorks</span>
+              <span>Kinematics</span>
+              <span>DFM</span>
+            </div>
+
+            <div style="margin-top: 20px;">
+              <a href="Internal%20Combustion%20Engine/ic-engine.html" class="btn">View Project Details →</a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card">
+            <div class="card-top">
+              <div class="card-icon">⌘</div>
+              <span class="card-num">PROJECT / 02</span>
+            </div>
+            <h3>Robotics Chassis & Arm Linkages</h3>
+            <p>Engineered structural brackets, motor gear reductions, and precision arm joints for a compact multi-axis manipulator.</p>
+            <div class="pill-group">
+              <span>Robotics</span>
+              <span>Actuator Sizing</span>
+              <span>Prototyping</span>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card">
+            <div class="card-top">
+              <div class="card-icon">⌗</div>
+              <span class="card-num">PROJECT / 03</span>
+            </div>
+            <h3>Reverse Engineering & CAD Remaster</h3>
+            <p>Digitized legacy cast components using physical measurement techniques, reconstructing parametric models with draft angles.</p>
+            <div class="pill-group">
+              <span>Reverse Engineering</span>
+              <span>Drafting</span>
+              <span>Tolerancing</span>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="card">
+            <div class="card-top">
+              <div class="card-icon">▧</div>
+              <span class="card-num">PROJECT / 04</span>
+            </div>
+            <h3>Sheet Metal Enclosure & Packaging</h3>
+            <p>Designed an IP-rated modular electronics enclosure optimized for punch-press and press-brake fabrication.</p>
+            <div class="pill-group">
+              <span>Sheet Metal</span>
+              <span>DFM</span>
+              <span>Fabrication</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Capabilities -->
+    <section class="skills-section" id="capabilities">
+      <div class="container">
+        <h2 class="section-title">Technical Capabilities</h2>
+        <p class="section-sub">Areas of engineering execution and technical toolsets.</p>
+
+        <div class="skills-grid">
+          <div class="skill-box">
+            <h4>CAD & Modeling</h4>
+            <ul>
+              <li>SolidWorks Modeling</li>
+              <li>Complex 3D Assemblies</li>
+              <li>Sheet Metal & Weldments</li>
+              <li>Surface Modeling</li>
+            </ul>
+          </div>
+          <div class="skill-box">
+            <h4>Engineering Rigor</h4>
+            <ul>
+              <li>DFM (Design for Manufacturing)</li>
+              <li>DFA (Design for Assembly)</li>
+              <li>Kinematic Simulation</li>
+              <li>Motor & Actuator Sizing</li>
+            </ul>
+          </div>
+          <div class="skill-box">
+            <h4>Fabrication & Build</h4>
+            <ul>
+              <li>Rapid Prototyping (3D Printing)</li>
+              <li>CNC Machining Layouts</li>
+              <li>Physical Assembly & Fit-up</li>
+              <li>Hardware Sourcing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <h2>Ready to Collaborate?</h2>
+          <p>Whether you need custom machine components, CAD conversion, or physical prototyping design, let's talk.</p>
+          <a class="btn" href="mailto:your-email@example.com?subject=Design%20Engineering%20Inquiry">Send an Email ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© Smit Vegad • Built with GitHub Pages</p>
+    </div>
+  </footer>
+</body>
+</html>
