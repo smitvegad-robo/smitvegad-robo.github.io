@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0c1015">
-  <title>JCB Backhoe Excavator Arm | Smit Vegad</title>
+  <title>JCB Back Arm Subsystem | Smit Vegad</title>
 
   <style>
     :root {
@@ -23,7 +23,7 @@
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
@@ -94,6 +94,7 @@
       letter-spacing: -0.5px;
     }
 
+    /* Specs Overview */
     .specs-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -118,6 +119,7 @@
       letter-spacing: 1px;
     }
 
+    /* Media Cards */
     .media-card {
       background: var(--surface);
       border: 1px solid var(--line);
@@ -126,8 +128,7 @@
       margin-bottom: 36px;
     }
 
-    .media-card img,
-    .media-card video {
+    .media-card img {
       width: 100%;
       display: block;
       background: #080c10;
@@ -168,6 +169,7 @@
       margin-bottom: 4px;
     }
 
+    /* Confidentiality block */
     .nda-card {
       background: var(--surface2);
       border: 1px dashed var(--line);
@@ -211,15 +213,15 @@
 
   <main class="container">
     <div class="project-header">
-      <span class="tag">Heavy Equipment & Mechanism Design</span>
-      <h1>JCB Backhoe Excavator Arm Subsystem</h1>
+      <span class="tag">Heavy Machinery & Mechanism Design</span>
+      <h1>JCB Back Arm Assembly & Linkage Modeling</h1>
       <p class="lead">
-        Parametric design and kinematic linkage assembly of a backhoe excavator arm, including boom structure, dipper arm, four-bar bucket curl mechanism, hydraulic actuator mounts, and heavy weldment profiling.
+        Comprehensive 3D parametric CAD modeling, mechanical articulation layout, kinematic linkages, and structural fabrication drafting for a heavy-duty excavator backhoe boom and dipper assembly.
       </p>
     </div>
 
     <section class="media-section">
-      <h2 class="section-title">Design & Engineering Specifications</h2>
+      <h2 class="section-title">Engineering & Design Overview</h2>
       
       <div class="specs-grid">
         <div class="spec-item">
@@ -227,50 +229,93 @@
           SolidWorks (Parametric Assemblies & Weldments)
         </div>
         <div class="spec-item">
-          <strong>Key Subsystems</strong>
-          Boom, Dipper/Stick, Bucket Linkage, Hydraulic Cylinders & Pin Joints
+          <strong>Subsystems Modeled</strong>
+          Boom structure, dipper arm, 4-bar bucket tipping linkage, hydraulic pin clevises.
         </div>
         <div class="spec-item">
           <strong>Engineering Focus</strong>
-          Range of motion, pin shear capacity, structural rigidity, and weldment DFM
+          Pin shear calculations, breakout torque, weldment layout, and clearance envelopes.
         </div>
       </div>
 
-      <h2 class="section-title">Technical Media & Visualizations</h2>
+      <h2 class="section-title">Technical Drawings, Assembly & Exploded Views</h2>
 
-      <!-- MEDIA ITEM 1: MAIN ASSEMBLY / OVERVIEW -->
+      <!-- 1. SOLIDWORKS ASSEMBLY RENDER -->
       <article class="media-card">
-        <!-- Replace filename with your uploaded image -->
-        <img src="jcb-arm-overview.png" alt="JCB Arm Full CAD Assembly">
+        <img src="JCB%20Back%20Arm%20Solidworks.PNG" alt="JCB Back Arm SolidWorks Assembly">
         <div class="media-caption">
-          <h3><span>FIGURE / 01</span> Full Backhoe Kinematic Assembly</h3>
+          <h3><span>FIGURE / 01</span> 3D SolidWorks Master Assembly</h3>
           <p>
-            Complete assembly model illustrating the full reach envelope. Designed with multi-position hinge joints and realistic hydraulic cylinder stroke limits.
+            Complete 3D parametric model displaying the fully constrained excavator arm system. Accurately details the curved boom geometry designed to maximize trench depth and truck clearance while distributing cyclic digging loads through heavy-plate gussets.
           </p>
           <ul>
-            <li><strong>Kinematic Linkage:</strong> Optimized 4-bar bucket tipping mechanism for maximum breakout force and rotation angle.</li>
-            <li><strong>Pin Joint Cleats:</strong> Heavy-duty pivot lugs sized for high radial digging loads.</li>
+            <li><strong>Kinematic Mating:</strong> Concentric pin joints with defined limit mates modeling physical cylinder extensions and boom curl angles.</li>
+            <li><strong>Pin Joints & Bushings:</strong> Sized for high surface bearing stress to withstand dynamic excavator breakout forces.</li>
           </ul>
         </div>
       </article>
 
-      <!-- MEDIA ITEM 2: DRAWINGS / FEA / EXPLODED (Adjust as per your files) -->
+      <!-- 2. MAIN BLUEPRINT -->
       <article class="media-card">
-        <!-- Replace filename with your uploaded drawing or FEA plot -->
-        <img src="jcb-arm-blueprint.png" alt="Technical Blueprint or FEA Analysis">
+        <img src="JCB%20Back%20Arm%20Blueprint.png" alt="JCB Back Arm Technical Blueprint">
         <div class="media-caption">
-          <h3><span>FIGURE / 02</span> Structural Weldments & Stress Distribution</h3>
+          <h3><span>FIGURE / 02</span> General Assembly Blueprint & Orthographic Layout</h3>
           <p>
-            Fabricated steel box sections designed with internal stiffener ribs to resist bending moments under peak hydraulic bucket tear-out forces.
+            Multi-view technical blueprint providing front, side, and top elevations of the articulated linkage. Illustrates overall physical envelopes, center-to-center pin distances, and ground-level reach bounds.
+          </p>
+          <ul>
+            <li><strong>Geometric Layout:</strong> Verifies boom-to-dipper motion clearance preventing mechanical binding during complete curl strokes.</li>
+            <li><strong>Hydraulic Packaging:</strong> Line-of-action alignment for boom and stick hydraulic rams.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 3. BLUEPRINT WITH DIMENSIONS -->
+      <article class="media-card">
+        <img src="JCB%20Back%20Arm%20Blueprint%20%26%20Dimension.png" alt="JCB Back Arm Dimensions and Tolerancing">
+        <div class="media-caption">
+          <h3><span>FIGURE / 03</span> Detailed Fabrication Dimensions & Clearance Checks</h3>
+          <p>
+            Dimensioned engineering print highlighting critical fabrication measurements, pivot boss centerlines, flange thicknesses, and pin hole diameters.
+          </p>
+          <ul>
+            <li><strong>Manufacturing Tolerances:</strong> Close-tolerance bored holes for press-fit bronze/hardened steel bushings.</li>
+            <li><strong>Fabrication Geometry:</strong> Structural weldments with cut radii specified to minimize stress concentrations at joint junctions.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 4. EXPLODED VIEW -->
+      <article class="media-card">
+        <img src="JCB%20Back%20Arm%20Exploded%20View.png" alt="JCB Back Arm Exploded Assembly View">
+        <div class="media-caption">
+          <h3><span>FIGURE / 04</span> Exploded View & Component Architecture</h3>
+          <p>
+            Isometric exploded view showing assembly sequence and disassembly hierarchy for field servicing, grease pin replacement, and cylinder pin rebuilds.
+          </p>
+          <ul>
+            <li><strong>Assembly Hierarchy:</strong> Visual tracking of retention plates, cross-bolts, and thrust washers across all primary joints.</li>
+            <li><strong>Maintainability:</strong> Direct fastener accessibility designed for field overhaul and maintenance tooling.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 5. TECHNICAL EXPLANATION / SCHEMATIC -->
+      <article class="media-card">
+        <img src="JCB%20Back%20Arm%20Explaination.jpeg" alt="JCB Back Arm Mechanism Breakdown">
+        <div class="media-caption">
+          <h3><span>FIGURE / 05</span> Linkage Kinematics & Subsystem Breakdown</h3>
+          <p>
+            Detailed technical breakdown outlining load transmission across the 4-bar bucket tipping mechanism, moment arm variations through rotation, and cylinder rod mechanical advantage.
           </p>
         </div>
       </article>
 
-      <!-- Confidentiality notice -->
+      <!-- Security / NDA note -->
       <div class="nda-card">
-        <h3>🔒 Manufacturing & CAD Data</h3>
+        <h3>🔒 Engineering Models & Structural Analysis Data</h3>
         <p>
-          Native SolidWorks part files (`.SLDPRT`), master assembly (`.SLDASM`), and neutral `.STEP` formats are archived and available upon direct request.
+          Native SolidWorks part files (`.SLDPRT`), subassemblies (`.SLDASM`), and universal `.STEP` models with structural weldment profiles are securely preserved and available upon request.
         </p>
       </div>
 
