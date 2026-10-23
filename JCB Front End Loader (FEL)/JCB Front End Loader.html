@@ -1,1 +1,343 @@
-hi
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0c1015">
+  <title>JCB Front End Loader (FEL) | Smit Vegad</title>
+
+  <style>
+    :root {
+      --bg: #0c1015;
+      --surface: #131a22;
+      --surface2: #18222c;
+      --line: #293642;
+      --text: #f2f5f8;
+      --muted: #9aa8b6;
+      --orange: #ff923f;
+      --orange-light: #ffb16f;
+      --max: 960px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+
+    .topline {
+      height: 3px;
+      background: linear-gradient(90deg, var(--orange), transparent 75%);
+    }
+
+    header {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      background: rgba(12, 16, 21, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+    }
+
+    .back-btn {
+      color: var(--orange);
+      font-size: 13px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s ease;
+    }
+    .back-btn:hover { color: var(--orange-light); }
+
+    .project-header {
+      padding: 50px 0 35px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .tag {
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 11px;
+      font-weight: 800;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: clamp(30px, 4.8vw, 44px);
+      letter-spacing: -1.2px;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 820px;
+    }
+
+    .media-section { padding: 40px 0; }
+    .section-title {
+      font-size: 22px;
+      margin-bottom: 22px;
+      letter-spacing: -0.5px;
+    }
+
+    /* Specs Overview */
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .spec-item {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 16px 20px;
+      border-radius: 6px;
+      font-size: 13.5px;
+    }
+
+    .spec-item strong {
+      display: block;
+      color: var(--orange);
+      margin-bottom: 5px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Media Cards */
+    .media-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 36px;
+    }
+
+    .media-card img {
+      width: 100%;
+      display: block;
+      background: #080c10;
+      max-height: 680px;
+      object-fit: contain;
+    }
+
+    .media-caption {
+      padding: 20px 24px;
+      border-top: 1px solid var(--line);
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .media-caption h3 {
+      font-size: 16px;
+      color: var(--text);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .media-caption h3 span {
+      color: var(--orange);
+      font-size: 12px;
+      font-family: monospace;
+      letter-spacing: 1px;
+    }
+
+    .media-caption ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    .media-caption li {
+      margin-bottom: 4px;
+    }
+
+    /* Confidentiality block */
+    .nda-card {
+      background: var(--surface2);
+      border: 1px dashed var(--line);
+      border-radius: 8px;
+      padding: 26px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .nda-card h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+      color: var(--orange);
+    }
+
+    .nda-card p {
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 26px 0;
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topline"></div>
+
+  <header>
+    <div class="container">
+      <a href="../index.html" class="back-btn">← Back to Portfolio</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="project-header">
+      <span class="tag">Heavy Equipment & Mechanism Design</span>
+      <h1>JCB Front End Loader (FEL) Bucket & Kinematic Linkage</h1>
+      <p class="lead">
+        Complete parametric 3D CAD modeling, multi-bar lift linkage articulation, hydraulic cylinder integration, and heavy-duty structural fabrication drafting for a front loader shovel assembly.
+      </p>
+    </div>
+
+    <section class="media-section">
+      <h2 class="section-title">Engineering & Design Overview</h2>
+      
+      <div class="specs-grid">
+        <div class="spec-item">
+          <strong>CAD Platform</strong>
+          SolidWorks (Parametric Assemblies, Weldments & Sheet Metal)
+        </div>
+        <div class="spec-item">
+          <strong>Subsystems Designed</strong>
+          Loader bucket shell, cutting edge/teeth, 4-bar dump linkage, lift arm pivot lugs.
+        </div>
+        <div class="spec-item">
+          <strong>Engineering Focus</strong>
+          Breakout capacity, roll-back/dump angles, weldment rigidity, and pin shear resistance.
+        </div>
+      </div>
+
+      <h2 class="section-title">Technical Drawings, Assembly & Exploded Views</h2>
+
+      <!-- 1. SOLIDWORKS CAD MODEL -->
+      <article class="media-card">
+        <img src="JCB%20Front%20End%20Loader%20Solidworks.jpeg" alt="JCB Front End Loader SolidWorks Master Assembly">
+        <div class="media-caption">
+          <h3><span>FIGURE / 01</span> 3D SolidWorks Master Model</h3>
+          <p>
+            Parametrically constrained assembly of the front end loader bucket and mounting geometry. Features structural gussets designed to carry high crowd and breakout loads while maintaining optimal forward sightlines for the operator.
+          </p>
+          <ul>
+            <li><strong>Kinematic Bounds:</strong> Defined angular mechanical limits preventing hydraulic cylinder over-travel and linkage lockup.</li>
+            <li><strong>Mounting Lug Reinforcement:</strong> Dual-shear clevis ears distributed along the bucket spine to minimize localized torsional distortion.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 2. RENDERED PERSPECTIVE 1 -->
+      <article class="media-card">
+        <img src="JCB%20Front%20End%20Loader%20Rendered%20Image%201.jpeg" alt="JCB Front End Loader Isometric Render View">
+        <div class="media-caption">
+          <h3><span>FIGURE / 02</span> Photorealistic Assembly Render — Primary Aspect</h3>
+          <p>
+            Isometric perspective highlighting the curved back-wrapper design engineered for smooth material rollover during loading and clean material shedding during dump cycles.
+          </p>
+          <ul>
+            <li><strong>Bucket Profile:</strong> Optimized radius that increases material retention during transport without exceeding machine center-of-gravity margins.</li>
+            <li><strong>Wear Edge:</strong> Heavy base cutting edge designed for replaceable bolt-on teeth configurations.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 3. RENDERED PERSPECTIVE 2 -->
+      <article class="media-card">
+        <img src="JCB%20Front%20End%20Loader%20Rendered%20Image%202.jpeg" alt="JCB Front End Loader Detailed Render">
+        <div class="media-caption">
+          <h3><span>FIGURE / 03</span> Structural Reinforcements & Hydraulic Integration</h3>
+          <p>
+            Detailed view illustrating the underside wear strips, corner gussets, and hydraulic tilt ram connection geometry designed for severe earthmoving cycles.
+          </p>
+        </div>
+      </article>
+
+      <!-- 4. GENERAL BLUEPRINT -->
+      <article class="media-card">
+        <img src="JCB%20Front%20End%20Loader%20Blueprint%20%26%20Dimension.png" alt="JCB Front End Loader Dimensions and Blueprint">
+        <div class="media-caption">
+          <h3><span>FIGURE / 04</span> General Arrangement Drawing & Critical Dimensions</h3>
+          <p>
+            Multi-view technical blueprint providing orthographic elevations, center-to-center pin spacings, and primary clearance dimensions for chassis and lift arm fit-up.
+          </p>
+          <ul>
+            <li><strong>Critical Datums:</strong> Defined pivot boss centerlines with strict co-axial hole tolerances to prevent joint binding.</li>
+            <li><strong>Clearances:</strong> Verified articulation envelopes against loader chassis structure at max dump height.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 5. EXPLODED ASSEMBLY VIEW -->
+      <article class="media-card">
+        <img src="JCB%20Front%20End%20Loader%20Exploded%20View.png" alt="JCB Front End Loader Exploded View">
+        <div class="media-caption">
+          <h3><span>FIGURE / 05</span> Exploded View & Component Architecture</h3>
+          <p>
+            Isometric exploded view detailing individual structural plates, wear components, pivot pins, grease seals, and retention hardware.
+          </p>
+          <ul>
+            <li><strong>Assembly Logic:</strong> Sequential layout for simplified workshop fabrication, welding sequence, and pin installation.</li>
+            <li><strong>Maintenance Provision:</strong> Direct grease channel pathways and external pin keeper plates for field servicing.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- 6. MECHANISM EXPLANATION -->
+      <article class="media-card">
+        <img src="JCB%20Front%20End%20Loader%20Explanation.jpeg" alt="JCB Front End Loader Mechanism Breakdown">
+        <div class="media-caption">
+          <h3><span>FIGURE / 06</span> Tilt Linkage Kinematics & Mechanics</h3>
+          <p>
+            Technical breakdown illustrating the mechanical advantage of the tilt linkage throughout the curl and dump cycle, optimizing crowd force when breaking into compacted soil or gravel piles.
+          </p>
+        </div>
+      </article>
+
+      <!-- Security / NDA note -->
+      <div class="nda-card">
+        <h3>🔒 Engineering Models & Fabrication Data</h3>
+        <p>
+          Native SolidWorks part files (`.SLDPRT`), subassemblies (`.SLDASM`), plate flat-pattern DXFs, and neutral `.STEP` formats are securely archived and available upon direct request.
+        </p>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© Smit Vegad • Mechatronics & Design Engineer • Built with GitHub Pages</p>
+    </div>
+  </footer>
+
+</body>
+</html>
