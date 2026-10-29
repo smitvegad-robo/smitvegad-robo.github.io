@@ -1,1 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0c1015">
+  <title>Articulated Robot Arm & Embedded Control | Smit Vegad</title>
 
+  <style>
+    :root {
+      --bg: #0c1015;
+      --surface: #131a22;
+      --surface2: #18222c;
+      --line: #293642;
+      --text: #f2f5f8;
+      --muted: #9aa8b6;
+      --orange: #ff923f;
+      --orange-light: #ffb16f;
+      --max: 960px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+
+    .topline {
+      height: 3px;
+      background: linear-gradient(90deg, var(--orange), transparent 75%);
+    }
+
+    header {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      background: rgba(12, 16, 21, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+    }
+
+    .back-btn {
+      color: var(--orange);
+      font-size: 13px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s ease;
+    }
+    .back-btn:hover { color: var(--orange-light); }
+
+    .project-header {
+      padding: 50px 0 35px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .tag {
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 11px;
+      font-weight: 800;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: clamp(30px, 4.8vw, 44px);
+      letter-spacing: -1.2px;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 820px;
+    }
+
+    .media-section { padding: 40px 0; }
+    .section-title {
+      font-size: 22px;
+      margin-bottom: 22px;
+      letter-spacing: -0.5px;
+    }
+
+    /* Specs Overview */
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .spec-item {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 16px 20px;
+      border-radius: 6px;
+      font-size: 13.5px;
+    }
+
+    .spec-item strong {
+      display: block;
+      color: var(--orange);
+      margin-bottom: 5px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .media-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 36px;
+    }
+
+    .media-card img {
+      width: 100%;
+      display: block;
+      background: #080c10;
+      max-height: 680px;
+      object-fit: contain;
+    }
+
+    .media-caption {
+      padding: 20px 24px;
+      border-top: 1px solid var(--line);
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .media-caption h3 {
+      font-size: 16px;
+      color: var(--text);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .media-caption h3 span {
+      color: var(--orange);
+      font-size: 12px;
+      font-family: monospace;
+      letter-spacing: 1px;
+    }
+
+    .media-caption ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    .media-caption li {
+      margin-bottom: 4px;
+    }
+
+    .nda-card {
+      background: var(--surface2);
+      border: 1px dashed var(--line);
+      border-radius: 8px;
+      padding: 26px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .nda-card h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+      color: var(--orange);
+    }
+
+    .nda-card p {
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 26px 0;
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topline"></div>
+
+  <header>
+    <div class="container">
+      <a href="../index.html" class="back-btn">&#8592; Back to Portfolio</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="project-header">
+      <span class="tag">Robotics, 3D Printing &amp; Embedded Systems</span>
+      <h1>Multi-Axis Articulated Robot Arm &amp; Arduino Automation</h1>
+      <p class="lead">
+        A complete mechatronic robotic manipulator engineered in SolidWorks, manufactured using functional 3D printing (additive DFM), and controlled through an Arduino microcontroller architecture. Features multi-axis positional kinematic control, high-torque servo actuation, dedicated power bus routing, and a mechanical end-effector gripper.
+      </p>
+    </div>
+
+    <section class="media-section">
+      <h2 class="section-title">Mechatronic System Architecture</h2>
+      
+      <div class="specs-grid">
+        <div class="spec-item">
+          <strong>3D Printing &amp; Additive DFM</strong>
+          Functional FDM components designed with specific print orientations to align layer lines with principal bending moments; calibrated bore tolerances for press-fit bearings and brass threaded heat-set inserts.
+        </div>
+        <div class="spec-item">
+          <strong>Electronics &amp; Embedded Control</strong>
+          Arduino microcontroller platform generating synchronized multi-channel PWM signals; dedicated external 5V/6V high-current power rail with bulk capacitor filtering to isolate inductive motor noise from logic circuits.
+        </div>
+        <div class="spec-item">
+          <strong>Kinematics &amp; Joint Mechanics</strong>
+          Multi-DOF articulated kinematic chain with dual-support clevis brackets, counterbalanced link geometry, and torque-reducing transmission mounts.
+        </div>
+      </div>
+
+      <h2 class="section-title">Manipulator Geometry &amp; Mechanism Breakdown</h2>
+
+      <!-- FIGURE 01: ISOMETRIC VIEW -->
+      <article class="media-card">
+        <img src="Articulated%20Robot%20(Isometric%20View).png" alt="Articulated Robot Arm Master Isometric CAD View">
+        <div class="media-caption">
+          <h3><span>FIGURE / 01</span> Master Arm CAD Assembly &amp; Base Turntable</h3>
+          <p>
+            Complete 3D SolidWorks assembly of the articulated arm illustrating the base yaw rotation, shoulder joint, and elbow articulation. The base integrates radial ball bearing mounts to isolate axial thrust and overturning moment loads from the servo motor drive shaft.
+          </p>
+          <ul>
+            <li><strong>Optimized Additive Geometry:</strong> Structural ribbing and hollow-core cross sections modeled to reduce moving link inertia, minimizing motor stall torque during rapid acceleration phases.</li>
+            <li><strong>Fastener Architecture:</strong> Fastened using metric stainless steel socket head cap screws with counterbored seats embedded in the 3D-printed housing.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- FIGURE 02: ISOMETRIC VIEW 2 -->
+      <article class="media-card">
+        <img src="Articulated%20Robot%20(Isometric%20View%202).png" alt="Articulated Robot Arm Wrist and Linkage Articulation">
+        <div class="media-caption">
+          <h3><span>FIGURE / 02</span> Forearm Kinematics &amp; Cable Management Channels</h3>
+          <p>
+            Secondary isometric projection highlighting forearm linkage positioning and internal wire pass-through conduits. Designed to prevent harness fatigue and cable binding during continuous rotational cycles.
+          </p>
+          <ul>
+            <li><strong>Rotational Joint Clearances:</strong> 0.25mm diametral clearances maintained on all moving printed interfaces to ensure smooth motion without unwanted radial backlash.</li>
+            <li><strong>Servo Horn Pocketing:</strong> Recessed spline pockets engineered directly into printed links for rigid, slip-free torque transfer from actuator splines.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- FIGURE 03: GRIPPER ASSEMBLY -->
+      <article class="media-card">
+        <img src="Articulated%20Robot%20Gripper%20Assembly.png" alt="Articulated Robot End-Effector Gripper Mechanism">
+        <div class="media-caption">
+          <h3><span>FIGURE / 03</span> Parallel-Jaw End-Effector Gripper Mechanism</h3>
+          <p>
+            Precision dual-finger robotic end-effector driven by an integrated micro-servo through a spur-gear and parallel linkage mechanism. Converts rotary servo actuation into uniform symmetric linear jaw clamping.
+          </p>
+          <ul>
+            <li><strong>Compliant Grip Geometry:</strong> Textured contact pads engineered to distribute normal contact pressure securely across varied payload shapes.</li>
+            <li><strong>Gear Mesh Tolerancing:</strong> Custom involute tooth profiling compensating for FDM polymer thermal shrinkage to ensure smooth, bind-free gear mesh.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- FIGURE 04: EXPLODED VIEW -->
+      <article class="media-card">
+        <img src="Articulated%20Robot%20Exploded%20View.png" alt="Articulated Robot Arm Exploded Assembly View">
+        <div class="media-caption">
+          <h3><span>FIGURE / 04</span> Exploded View &amp; Assembly Sequence</h3>
+          <p>
+            Isometric exploded layout detailing the bottom-to-top assembly sequence: cylindrical turntable base, twin-clevis shoulder joint, counterbalanced bicep link, forearm servo housing, and parallel-jaw end-effector.
+          </p>
+          <ul>
+            <li><strong>Hardware Access:</strong> Sized and spaced for direct hex-key clearance during installation of M3 fasteners and servo horn retention screws.</li>
+            <li><strong>Modular Maintenance:</strong> Modular joint clevises allow individual link replacement without disturbing adjacent wiring harnesses.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- FIGURE 05: KINEMATICS & AXIS BREAKDOWN -->
+      <article class="media-card">
+        <img src="Articulated%20Robot%20Explanation.png" alt="Articulated Robot Kinematics and Subsystem Breakdown">
+        <div class="media-caption">
+          <h3><span>FIGURE / 05</span> Subsystem Architecture &amp; Kinematic Axis Breakdown</h3>
+          <p>
+            Schematic breakdown of the manipulator illustrating each degree of freedom (&theta;<sub>1</sub> to &theta;<sub>3</sub>) and actuation zone:
+          </p>
+          <ul>
+            <li><strong>Base Turntable (&theta;<sub>1</sub> Yaw):</strong> Deep-groove ball-bearing supported base isolating lateral overturning moments from the azimuth servo drive.</li>
+            <li><strong>Shoulder &amp; Elbow Clevis (&theta;<sub>2</sub> Pitch):</strong> Dual-shear bracket pivots aligned with internal high-torque metal-gear servo horn pockets.</li>
+            <li><strong>Forearm &amp; Wrist Pitch (&theta;<sub>3</sub>):</strong> Lightweight counterbalanced link containing internal conduits to protect signal and power lines.</li>
+            <li><strong>Parallel-Jaw Gripper (&theta;):</strong> Synchronized gear-driven linkage converting rotational servo stroke into balanced grasping force.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Security / NDA note -->
+      <div class="nda-card">
+        <h3>&#128274; Arduino Firmware &amp; 3D Print Deliverables</h3>
+        <p>
+          Complete Arduino control sketches (`.ino`), printable high-resolution `.STL` mesh files, slice configuration parameters, and parametric SolidWorks assemblies (`.SLDASM`) are safely archived and available upon direct request.
+        </p>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; Smit Vegad &bull; Mechatronics &amp; Design Engineer &bull; Built with GitHub Pages</p>
+    </div>
+  </footer>
+
+</body>
+</html>
