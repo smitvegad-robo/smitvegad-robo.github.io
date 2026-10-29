@@ -1,1 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0c1015">
+  <title>Mobile Soda Machine Cart | Smit Vegad</title>
 
+  <style>
+    :root {
+      --bg: #0c1015;
+      --surface: #131a22;
+      --surface2: #18222c;
+      --line: #293642;
+      --text: #f2f5f8;
+      --muted: #9aa8b6;
+      --orange: #ff923f;
+      --orange-light: #ffb16f;
+      --max: 960px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+
+    .topline {
+      height: 3px;
+      background: linear-gradient(90deg, var(--orange), transparent 75%);
+    }
+
+    header {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      background: rgba(12, 16, 21, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+    }
+
+    .back-btn {
+      color: var(--orange);
+      font-size: 13px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s ease;
+    }
+    .back-btn:hover { color: var(--orange-light); }
+
+    .project-header {
+      padding: 50px 0 35px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .tag {
+      color: var(--orange);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 11px;
+      font-weight: 800;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: clamp(30px, 4.8vw, 44px);
+      letter-spacing: -1.2px;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 820px;
+    }
+
+    .media-section { padding: 40px 0; }
+    .section-title {
+      font-size: 22px;
+      margin-bottom: 22px;
+      letter-spacing: -0.5px;
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .spec-item {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 16px 20px;
+      border-radius: 6px;
+      font-size: 13.5px;
+    }
+
+    .spec-item strong {
+      display: block;
+      color: var(--orange);
+      margin-bottom: 5px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .media-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 36px;
+    }
+
+    .media-card img {
+      width: 100%;
+      display: block;
+      background: #080c10;
+      max-height: 680px;
+      object-fit: contain;
+    }
+
+    .media-caption {
+      padding: 20px 24px;
+      border-top: 1px solid var(--line);
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .media-caption h3 {
+      font-size: 16px;
+      color: var(--text);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .media-caption h3 span {
+      color: var(--orange);
+      font-size: 12px;
+      font-family: monospace;
+      letter-spacing: 1px;
+    }
+
+    .media-caption ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    .media-caption li {
+      margin-bottom: 4px;
+    }
+
+    .nda-card {
+      background: var(--surface2);
+      border: 1px dashed var(--line);
+      border-radius: 8px;
+      padding: 26px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .nda-card h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+      color: var(--orange);
+    }
+
+    .nda-card p {
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 26px 0;
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topline"></div>
+
+  <header>
+    <div class="container">
+      <a href="../index.html" class="back-btn">&#8592; Back to Portfolio</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="project-header">
+      <span class="tag">Freelance Client Commission &bull; Sheet Metal &amp; Weldments</span>
+      <h1>Mobile Commercial Soda Machine Cart</h1>
+      <p class="lead">
+        A custom commercial mobile vending kiosk engineered for a client using SolidWorks. Features a structural steel tubular weldment chassis (black frame) combined with modular, folded sheet metal body enclosures and protective canopy cladding (yellow panels) designed for weather resistance, equipment payload support, and streamlined workshop fabrication.
+      </p>
+    </div>
+
+    <section class="media-section">
+      <h2 class="section-title">Engineering &amp; Design Overview</h2>
+      
+      <div class="specs-grid">
+        <div class="spec-item">
+          <strong>CAD Platform &amp; Tools</strong>
+          SolidWorks (Structural Weldments, Sheet Metal, Multibody Assemblies)
+        </div>
+        <div class="spec-item">
+          <strong>Chassis Architecture</strong>
+          Square hollow structural sections (SHS) with mitered corner joints, gusset reinforcement, and integrated equipment brackets.
+        </div>
+        <div class="spec-item">
+          <strong>Sheet Metal &amp; Cladding</strong>
+          Formed sheet metal roof panels and wall panels with hemmed edges, continuous drip channels, and fold tabs.
+        </div>
+      </div>
+
+      <h2 class="section-title">Technical Modeling, Weldment Layout &amp; Orthographic Views</h2>
+
+      <!-- FIGURE 01 -->
+      <article class="media-card">
+        <img src="Mobile%20Soda%20Machine%20Cart%201.png" alt="Mobile Soda Machine Cart SolidWorks Master Assembly View">
+        <div class="media-caption">
+          <h3><span>FIGURE / 01</span> SolidWorks Parametric Assembly &amp; Feature Tree</h3>
+          <p>
+            Master 3D assembly showcasing full subsystem integration. Features a detailed feature manager tree with parametric relations linking the primary weldment framework to fold-out service counter extensions, dispensing valve stations, and overhead canopies.
+          </p>
+          <ul>
+            <li><strong>Service Ergonomics:</strong> Workstation height, customer counter outreach, and beverage fountain head access configured for single-operator efficiency.</li>
+            <li><strong>Modular Cladding Fastening:</strong> Rivet and fastener hole patterns aligned to weldment tabs to ensure clean alignment during final assembly.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- FIGURE 02 -->
+      <article class="media-card">
+        <img src="Mobile%20Soda%20Machine%20Cart%20(Isometric%20View).png" alt="Mobile Soda Machine Cart Isometric Perspective View">
+        <div class="media-caption">
+          <h3><span>FIGURE / 02</span> Isometric Assembly &amp; Formed Sheet Metal Canopy</h3>
+          <p>
+            Isometric perspective highlighting the formed yellow roof canopy and upper side enclosures. The sheet metal panels are engineered with drainage contours and stiffening folds to maintain rigidity against wind loads and harsh weather without buckling.
+          </p>
+          <ul>
+            <li><strong>Roof Ridge &amp; Overhang:</strong> Extended rain deflection lip safeguarding service personnel, electronic controls, and beverage syrup racks.</li>
+            <li><strong>Internal Storage Cavity:</strong> Lower compartment volume reserved for CO2 cylinders, refrigeration chiller units, syrup tanks, and power distribution.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- FIGURE 03 -->
+      <article class="media-card">
+        <img src="Mobile%20Soda%20Machine%20Cart%20(Weldment%20Frame).png" alt="Mobile Soda Machine Cart Structural Steel Weldment Frame">
+        <div class="media-caption">
+          <h3><span>FIGURE / 03</span> Structural Steel Weldment Frame (Chassis Backbone)</h3>
+          <p>
+            Dedicated structural weldment view of the load-bearing framework. Constructed using standardized square steel tubing with end-treatments, corner miters, and structural cross-braces designed to support dynamic transport vibrations and heavy liquid payload weights.
+          </p>
+          <ul>
+            <li><strong>Weld Seam Strategy:</strong> Planned weld access points and stitch welding regions to mitigate thermal warp across long frame spans.</li>
+            <li><strong>Structural Rigidity:</strong> Triangular corner gusseting engineered to resist torsional racking loads during curb transitions and rolling transport.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- FIGURE 04 -->
+      <article class="media-card">
+        <img src="Mobile%20Soda%20Machine%20Cart%20(Front%20Elevation).png" alt="Mobile Soda Machine Cart Front Elevation Technical Drawing View">
+        <div class="media-caption">
+          <h3><span>FIGURE / 04</span> Front Elevation &amp; Dimensional Envelope</h3>
+          <p>
+            Orthographic front elevation illustrating maximum external transport envelopes, serving aperture heights, fold-out wing clearances, and ground wheel clearances.
+          </p>
+          <ul>
+            <li><strong>Fabrication Flat Patterns:</strong> Derived 1:1 DXF flat pattern cutouts generated for laser cutting and CNC press-brake bending.</li>
+            <li><strong>Standardized Cut-List:</strong> Tabulated structural weldment member lengths for zero-waste raw stock tube cutting.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Security / NDA note -->
+      <div class="nda-card">
+        <h3>&#128274; Client Commission &amp; Manufacturing Data</h3>
+        <p>
+          Custom project developed under direct client contract. Native SolidWorks files (`.SLDPRT`, `.SLDASM`), cut lists, and DXF sheet metal flat patterns are safely archived.
+        </p>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; Smit Vegad &bull; Mechatronics and Design Engineer &bull; Built with GitHub Pages</p>
+    </div>
+  </footer>
+
+</body>
+</html>
